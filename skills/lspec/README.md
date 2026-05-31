@@ -102,7 +102,7 @@ The agent acts as a thinking partner — not an interviewer. It asks clarifying 
 | AUTH-03        | WHEN user is already logged in THEN system SHALL redirect to dashboard         |
 ```
 
-**Clarify (auto-triggered):** When the spec has ambiguous, user-facing decisions (layout preferences, interaction patterns, error handling style), the agent asks the user and captures decisions in `context.md` before design.
+**Discuss gray areas (auto-triggered):** When the spec has ambiguous, user-facing decisions (layout preferences, interaction patterns, error handling style), the agent automatically asks the user about them — creating a `context.md` that locks those decisions before design. This is NOT a separate phase — it only happens within Specify when ambiguity is detected.
 
 ### Design (optional)
 
@@ -178,7 +178,7 @@ These trigger patterns help the agent recognize your intent, but you don't need 
 | ----------------------------------------- | --------------------------------------- |
 | `Discovery`, `Start discovery`           | Run adaptive discovery and capture context |
 | `Specify feature`, `Define requirements`  | Create spec.md with requirement IDs        |
-| `Ask`, `Clarify`, `How should this work`  | Capture user decisions for gray areas      |
+| `Discuss feature`, `How should this work` | Capture user decisions for gray areas   |
 | `Design feature`, `Architecture`          | Create design.md with architecture         |
 | `Break into tasks`, `Create tasks`        | Create tasks.md with atomic breakdown      |
 | `Implement task`, `Build`, `Execute`      | Execute specific task with verification    |
@@ -225,7 +225,7 @@ You: Specify feature user-authentication
 
 Agent: [Asks clarifying questions, creates spec.md with requirement IDs]
        I notice some gray areas in the UX — how should failed login attempts behave?
-       [Clarify: asks user and creates context.md]
+       [Discusses gray areas, creates context.md]
 
 You: Design the feature
 

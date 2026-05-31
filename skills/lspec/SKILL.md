@@ -157,7 +157,7 @@ The orchestrating agent uses this to update tasks.md status, traceability, and d
 | Trigger Pattern | Reference |
 |----------------|-----------|
 | Specify feature, define requirements | [specify.md](references/specify.md) |
-| Ask, clarify feature, how should this work | [discuss.md](references/discuss.md) |
+| Discuss feature, capture context, how should this work | [discuss.md](references/discuss.md) |
 | Design feature, architecture | [design.md](references/design.md) |
 | Break into tasks, create tasks | [tasks.md](references/tasks.md) |
 | Implement task, build, execute | [implement.md](references/implement.md) |
