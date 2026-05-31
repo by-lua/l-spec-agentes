@@ -1,0 +1,16 @@
+---
+name: lspec-specify
+description: Comando PI para operar LSpec (base TLC original).
+---
+
+# lspec-specify
+
+Este comando é um atalho PI.
+
+Fonte de verdade: `skills/lspec/SKILL.md` (adaptação integral do TLC original).
+
+Referências principais:
+- references/specify.md
+
+Regra:
+- Preserve comportamento do TLC original; adapte apenas superfície PI/comandos.

@@ -1,0 +1,16 @@
+---
+name: lspec-discuss
+description: Comando PI para operar LSpec (base TLC original).
+---
+
+# lspec-discuss
+
+Este comando é um atalho PI.
+
+Fonte de verdade: `skills/lspec/SKILL.md` (adaptação integral do TLC original).
+
+Referências principais:
+- references/discuss.md
+
+Regra:
+- Preserve comportamento do TLC original; adapte apenas superfície PI/comandos.
