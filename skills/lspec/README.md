@@ -58,19 +58,19 @@ O **L-Spec** resolve isso especificando o que deve ser feito **antes da codifica
 ### Instalar L-Spec
 
 ```bash
-lspec install
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/install.sh | bash
 ```
 
 ### Upgrade
 
 ```bash
-lspec upgrade
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/update.sh | bash
 ```
 
 ### Uninstall
 
 ```bash
-lspec uninstall
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/uninstall.sh | bash
 ```
 
 ## 🧩 Pacotes PI recomendados (melhor funcionamento)

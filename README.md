@@ -29,19 +29,19 @@ O L-Spec PI reduz isso com processo explícito antes de codar.
 ## Instalação
 
 ```bash
-lspec install
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/install.sh | bash
 ```
 
 ## Upgrade
 
 ```bash
-lspec upgrade
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/update.sh | bash
 ```
 
 ## Uninstall
 
 ```bash
-lspec uninstall
+curl -fsSL https://raw.githubusercontent.com/by-lua/lspec-pi/main/uninstall.sh | bash
 ```
 
 ## Pacotes PI recomendados
