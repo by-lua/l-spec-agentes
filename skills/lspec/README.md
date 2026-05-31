@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Version-2.0.0-purple?style=for-the-badge" alt="version" />
 </p>
 
-<h1 align="center">🎯 TLC Spec-Driven</h1>
+<h1 align="center">🎯 L-Spec PI</h1>
 
 <p align="center">
   <strong>Plan and implement projects with precision. Granular tasks. Clear dependencies. Right tools. Zero ceremony.</strong>
@@ -37,7 +37,7 @@
 ### Installation
 
 ```bash
-npx @tech-leads-club/agent-skills install -s tlc-spec-driven
+lspec install
 ```
 
 ### First Commands
@@ -288,7 +288,7 @@ When context exceeds 40k tokens, the skill displays a status indicator and sugge
 
 ## 🔗 Skill Integrations
 
-TLC Spec-Driven works even better when combined with complementary skills:
+L-Spec PI works even better when combined with complementary skills:
 
 | Skill              | Integration                                                                       |
 | ------------------ | --------------------------------------------------------------------------------- |
