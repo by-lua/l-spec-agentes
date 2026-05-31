@@ -1,27 +1,29 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Skill-TLC%20Spec--Driven-blue?style=for-the-badge" alt="skill badge" />
-  <img src="https://img.shields.io/badge/Stack-Agnostic-green?style=for-the-badge" alt="stack agnostic" />
-  <img src="https://img.shields.io/badge/Version-2.0.0-purple?style=for-the-badge" alt="version" />
+  <img src="https://img.shields.io/badge/Skill-L--Spec%20PI-blue?style=for-the-badge" alt="skill badge" />
+  <img src="https://img.shields.io/badge/Mode-Discovery%20Adaptive-green?style=for-the-badge" alt="discovery adaptive" />
+  <img src="https://img.shields.io/badge/Version-3.0.0-purple?style=for-the-badge" alt="version" />
 </p>
 
 <h1 align="center">🎯 L-Spec PI</h1>
 
 <p align="center">
-  <strong>Plan and implement projects with precision. Granular tasks. Clear dependencies. Right tools. Zero ceremony.</strong>
+  <strong>Spec-Driven Development para PI: discovery adaptativo, execução orientada a tarefas e continuidade real de sessão.</strong>
 </p>
 
 <p align="center">
-  <em>From the <a href="https://github.com/tech-leads-club">Tech Lead's Club</a> community</em>
+  <strong>Maintained by:</strong> <a href="https://github.com/by-lua">by-lua</a>
 </p>
 
 <p align="center">
-  <strong>Author:</strong> <a href="https://github.com/felipfr">Felipe Rodrigues</a> · 
-  <a href="https://linkedin.com/in/felipfr">LinkedIn</a>
+  <sub>Base conceitual inspirada no TLC Spec-Driven (Tech Lead's Club), com evolução prática e upgrades no ecossistema PI.</sub>
 </p>
 
-## ✨ What Is This Skill?
+## ✨ O que é SDD e o que é o L-Spec PI?
 
-**L-Spec PI (base TLC)** organiza o trabalho em fluxo consistente, mantendo rigor e sem pular etapas essenciais.
+**SDD (Spec-Driven Development)** é desenvolver por especificação primeiro e código depois.
+No L-Spec PI, isso vira um fluxo prático de trabalho para IA: descoberta, definição, quebra em tarefas e execução verificável.
+
+**L-Spec PI** organiza o trabalho em fluxo consistente, mantendo rigor e sem pular etapas essenciais.
 
 ```
 ┌───────────┐   ┌──────────┐   ┌──────────┐   ┌─────────┐   ┌─────────┐
@@ -32,13 +34,83 @@
 * Opcional por contexto da tarefa
 ```
 
-## 🚀 Quick Start
+## ❓ Por que isso existe?
 
-### Installation
+A maioria das sessões de programação com IA desperdiça **40–60% dos tokens** em reescritas, esclarecimentos e "achei que você quisesse dizer...".
+
+O **L-Spec** resolve isso especificando o que deve ser feito **antes da codificação** — assim, cada token gera valor, e não palpite.
+
+| Sem SDD | Com L-Spec |
+|---|---|
+| ❌ "Crie um login pra mim" → IA tenta → reescrever → reescrever | ✅ Primeiro discovery → a IA sabe exatamente o que você precisa |
+| ❌ Sem prova até o fim (ou nunca) | ✅ VERMELHO/VERDE/PORTÃO — cada feature é verificada antes de avançar |
+| ❌ Conhecimento se perde quando o contexto rola | ✅ `.specs/` fica no repositório — qualquer IA continua de onde parou |
+| ❌ Escopo cresce silenciosamente ("só mais uma coisa") | ✅ Fora de escopo é definido antes — mudanças viram decisões conscientes |
+
+**Resultado:** menos reescritas, menos bugs, commits mais limpos e projetos que sobrevivem entre sessões.
+
+## 🚀 Instalação, upgrade e remoção
+
+### Pré-requisitos (obrigatório)
+
+- **PI.dev** instalado e funcional
+
+### Instalar L-Spec
 
 ```bash
 lspec install
 ```
+
+### Upgrade
+
+```bash
+lspec upgrade
+```
+
+### Uninstall
+
+```bash
+lspec uninstall
+```
+
+## 🧩 Pacotes PI recomendados (melhor funcionamento)
+
+```bash
+pi install npm:pi-cymbal
+pi install npm:@davehardy20/pi-lsp-tools
+pi install npm:pi-mermaid
+```
+
+## ➕ Pacotes PI opcionais (fortemente recomendados)
+
+| Pacote | Instalar | Por quê |
+|---|---|---|
+| `@dreki-gg/pi-context7` | `pi install npm:@dreki-gg/pi-context7` | Documentação de libs atualizada via Context7 (referência recomendada pela base TLC) |
+| `context-mode` | `pi install npm:context-mode` | Redução agressiva de contexto (FTS5 KB, sandbox, busca por intenção) |
+| `pi-mcp-adapter` | `pi install npm:pi-mcp-adapter` | Executa servidores MCP como ferramentas nativas no PI |
+| `pi-web-access` | `pi install npm:pi-web-access` | Web search, fetch de URL, clone de GitHub, extração de PDF e YouTube |
+| `pi-ask-user` | `pi install npm:pi-ask-user` | Ask_user interativo com UI em split panel e múltipla escolha |
+
+## 🤖 Recomendado: L-Spec Subagents (by-lua)
+
+Se você quer extrair mais qualidade da execução, use também a extensão:
+
+- **Repo:** https://github.com/by-lua/lspec-subagents
+
+Com ela, você consegue delegar por especialidade, por exemplo:
+
+- **Opus** como **orquestrador** (coordena estratégia e divisão de trabalho)
+- **Gemini** como **designer** (UX, estrutura visual, direção de interface)
+- **GPT** como **executor** (implementação e entrega técnica)
+
+Esse modelo multiagente encaixa muito bem com o L-Spec PI porque mantém discovery/spec centralizados e distribui execução com papéis claros.
+
+## 📚 Leituras recomendadas
+
+- `references/pi-version-setup.md` — instalação e configuração do PI.dev
+- `references/pi-packages-guide.md` — comparação de pacotes PI e descoberta de novos pacotes
+- `references/pi-v2-architecture.md` — arquitetura híbrida v2 (skills como motor, comandos como atalhos)
+- `references/subagent-context-budget.md` — otimização de contexto (estratégia, `think: true`, calibração de `max_turns`, padrão de 3 agentes)
 
 ### First Commands
 
@@ -52,7 +124,6 @@ lspec install
 > 💬 **Natural Conversation, Not Commands**
 >
 > These are trigger phrases, not strict commands. The skill works through **natural conversation** — talk to your agent like you would to a colleague. Say things like _"I want to build an authentication system"_ or _"Fix the login button, it returns 401"_. The agent understands context and intent, not just keywords.
-
 ## 📁 Project Structure
 
 The skill creates a `.specs/` directory to organize all project documentation:
