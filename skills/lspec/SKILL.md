@@ -1,6 +1,6 @@
 ---
 name: lspec
-description: Versão PI do TLC Spec-Driven original com fluxo Discovery→Specify→Tasks→Execute obrigatório. Clarify e Design são opcionais por contexto. Sem quick mode.
+description: Spec-Driven Development para Claude Code e OpenCode. Fluxo Discovery→Specify→Tasks→Execute obrigatório. Clarify e Design são opcionais. Baseado no TLC Spec-Driven v2.
 license: CC-BY-4.0
 metadata:
   author: Felipe Rodrigues - github.com/felipfr
@@ -224,37 +224,37 @@ The orchestrating agent uses this to update tasks.md status, traceability, and d
 
 This skill leverages complementary PI packages to enhance execution. Before specific tasks, check if the relevant PI package is available and prefer it when installed.
 
-### Code Exploration → pi-cymbal + pi-lsp-tools
+### Code Exploration → codenavi + codenavi
 
-Whenever the workflow requires exploring or navigating code (brownfield mapping, code reuse analysis, pattern identification, dependency tracing, go-to-definition, references, diagnostics, symbols, rename), **always** check if `pi-cymbal` and `@davehardy20/pi-lsp-tools` are installed in the PI environment:
+Whenever the workflow requires exploring or navigating code (brownfield mapping, code reuse analysis, pattern identification, dependency tracing, go-to-definition, references, diagnostics, symbols, rename), **always** check if `codenavi` and `@davehardy20/codenavi` are installed in the PI environment:
 
 ```bash
 pi list | grep -E 'cymbal|lsp-tools'
 ```
 
-If `pi-cymbal` is installed, delegate code navigation and search to it — it provides a native layer for faster understanding and changes with less trial/error. If `pi-lsp-tools` is also available, it adds LSP precision for technical implementation.
+If `codenavi` is installed, delegate code navigation and search to it — it provides a native layer for faster understanding and changes with less trial/error. If `codenavi` is also available, it adds LSP precision for technical implementation.
 
 Fallback: if neither PI package is available, use the built-in code analysis tools (see [code-analysis.md](references/code-analysis.md)) and recommend:
 
 ```
-pi install npm:pi-cymbal
-pi install npm:@davehardy20/pi-lsp-tools
+pi install npm:codenavi
+pi install npm:@davehardy20/codenavi
 ```
 
 Display this recommendation at most once per session.
 
-### Diagrams → pi-mermaid
+### Diagrams → mermaid-studio
 
-Whenever the workflow requires creating or rendering mermaid diagrams (architecture overviews, data flows, component diagrams, sequence diagrams, etc.), **always** check if `pi-mermaid` is installed:
+Whenever the workflow requires creating or rendering mermaid diagrams (architecture overviews, data flows, component diagrams, sequence diagrams, etc.), **always** check if `mermaid-studio` is installed:
 
 ```bash
 pi list | grep mermaid
 ```
 
-If installed, delegate diagram rendering to `pi-mermaid` — it renders mermaid as ASCII in the TUI, making architecture and flow visible during the session without external tools. If not installed, proceed with inline mermaid code blocks as usual and recommend:
+If installed, delegate diagram rendering to `mermaid-studio` — it renders mermaid as ASCII in the TUI, making architecture and flow visible during the session without external tools. If not installed, proceed with inline mermaid code blocks as usual and recommend:
 
 ```
-pi install npm:pi-mermaid
+pi install npm:mermaid-studio
 ```
 
 Display this recommendation at most once per session.

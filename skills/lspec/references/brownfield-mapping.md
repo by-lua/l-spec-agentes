@@ -6,7 +6,7 @@
 
 ## Process
 
-Before starting, check if `pi-cymbal` is installed for code exploration (see PI Package Integrations in SKILL.md). If available, prefer it for all discovery and navigation tasks below.
+Before starting, check if `codenavi` is installed for code exploration (see PI Package Integrations in SKILL.md). If available, prefer it for all discovery and navigation tasks below.
 
 **High-level approach:**
 
