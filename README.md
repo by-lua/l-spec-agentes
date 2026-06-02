@@ -1,6 +1,8 @@
 # L-Spec
 
-Spec-Driven Development para Claude Code e OpenCode, mantendo o fluxo completo de especificação antes da execução.
+SDD (Spec-Driven Development) para Claude Code e OpenCode, mantendo o fluxo completo de especificação antes da execução.
+
+> Este projeto foi **adaptado do [L-Spec PI](https://github.com/by-lua/lspec-pi)** — a versão original para PI.dev. As funcionalidades são idênticas; as ferramentas de suporte e o instalador são específicos para Claude Code e OpenCode.
 
 ## O que é SDD?
 
@@ -40,31 +42,58 @@ O SDD reduz esse desperdício definindo o que será feito **antes** da implement
 - Pause/Resume work
 - Ask para perguntas durante o processo
 
-## Ferramentas opcionais
-
-Para experiência completa, instale:
-
-```bash
-npm install -g codenavi        # navegação de código (LSP-aware)
-npm install -g mermaid-studio  # diagramas Mermaid
-npm install -g @upstash/context7-mcp  # documentação de libs via Context7
-```
-
-> L-Spec funciona standalone. Recomendação: `codenavi` para reverse/discovery.
-
 ## Instalação
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/by-lua/l-spec-agentes/main/install.sh | bash
 ```
 
+O instalador pergunta:
+1. **Qual agente?** → OpenCode / Claude Code / Ambos
+2. **Escopo?** → Global (skills pra todos os projetos) ou Projeto (só neste projeto)
+3. **Confirmar?** → resumo antes de instalar
+
 Para mais opções: `bash install.sh --help`
+
+## Upgrade
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/by-lua/l-spec-agentes/main/update.sh | bash
+```
+Ou simplesmente re-executar o install: `bash install.sh` — sobrescreve skills e scripts.
+
+## Uninstall
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/by-lua/l-spec-agentes/main/uninstall.sh | bash
+```
+
+## Ferramentas recomendadas
+
+Use essas para experiência completa (todas opcionais — L-Spec funciona sem elas):
+
+```bash
+npm install -g codenavi        # navegação de código (LSP-aware)
+npm install -g mermaid-studio  # diagramas Mermaid em ASCII no terminal
+npm install -g @upstash/context7-mcp  # documentação de libs via Context7 (MCP server)
+```
+
+### codenavi
+Navegação e busca de código nativa para o agente — acelera entendimento e mudanças com menos tentativa/erro.
+
+### mermaid-studio
+Renderiza diagramas Mermaid em ASCII no terminal, deixando arquitetura e fluxo visíveis durante a sessão sem ferramenta externa.
+
+### @upstash/context7-mcp
+Server MCP que resolve IDs de bibliotecas e faz query na documentação atual via Context7.
+
+> Recomendação: `codenavi` é o mais importante para reverse e discovery.
 
 ## Comandos disponíveis
 
 | Comando | Descrição |
 |---------|-----------|
-| `/l` | Fluxo principal |
+| `/lspec` | Fluxo principal |
 | `/lspec discover` | Discovery de projeto |
 | `/lspec specify` | Definir feature |
 | `/lspec design` | Design técnico |
@@ -87,3 +116,18 @@ Para mais opções: `bash install.sh --help`
 └── .claude/ ou .opencode/
     └── skills/           # skills instaladas
 ```
+
+## Recomendado: L-Spec Subagents (by-lua)
+
+Extensão para delegação por especialidade:
+
+- Opus como orquestrador
+- Gemini como designer
+- GPT como executor
+
+Repo: https://github.com/by-lua/lspec-subagents
+
+## Referências internas
+
+- `skills/lspec/README.md`
+- `skills/lspec/references/`
