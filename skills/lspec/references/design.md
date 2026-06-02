@@ -26,7 +26,7 @@ Good triggers for research: new libraries, unfamiliar APIs, performance-sensitiv
 
 ### 2. Define Architecture
 
-Overview of how components interact. Use mermaid diagrams when helpful. Before creating any diagrams, check if the `mermaid-studio` skill is available (see Skill Integrations in SKILL.md).
+Overview of how components interact. Use mermaid diagrams when helpful. Before creating any diagrams, check if `pi-mermaid` is installed (see PI Package Integrations in SKILL.md).
 
 ### 3. Identify Code Reuse
 
@@ -160,7 +160,7 @@ interface AnotherModel {
 - **Research when uncertain** — 5 minutes of research prevents hours of rework
 - **Reuse is king** — Every component should reference existing patterns
 - **Interfaces first** — Define contracts before implementation
-- **Keep it visual** — Diagrams save 1000 words (check mermaid-studio skill in Skill Integrations)
+- **Keep it visual** — Diagrams save 1000 words (check pi-mermaid in PI Package Integrations)
 - **Small components** — If component does 3+ things, split it
 - **Check CONCERNS.md** — If it exists, flag fragile areas the design must address
 - **Confirm before Tasks** — User approves design before breaking into tasks

@@ -220,17 +220,44 @@ The orchestrating agent uses this to update tasks.md status, traceability, and d
 | Implement task, build, execute | [implement.md](references/implement.md) |
 | Validate, verify, test, UAT, walk me through it | [validate.md](references/validate.md) |
 
-## Skill Integrations
+## PI Package Integrations
 
-This skill coexists with other skills. Before specific tasks, check if complementary skills are installed and prefer them when available.
+This skill leverages complementary PI packages to enhance execution. Before specific tasks, check if the relevant PI package is available and prefer it when installed.
 
-### Diagrams → mermaid-studio
+### Code Exploration → pi-cymbal + pi-lsp-tools
 
-Whenever the workflow requires creating or updating a diagram (architecture overviews, data flows, component diagrams, sequence diagrams, etc.), **always** check if the `mermaid-studio` skill is installed in the user's environment before proceeding. If it is installed, delegate all diagram creation and rendering to it. If it is not installed, proceed with inline mermaid code blocks as usual and recommend the user install `mermaid-studio` for richer diagram capabilities (rendering to SVG/PNG, validation, theming, etc.). Display this recommendation at most once per session.
+Whenever the workflow requires exploring or navigating code (brownfield mapping, code reuse analysis, pattern identification, dependency tracing, go-to-definition, references, diagnostics, symbols, rename), **always** check if `pi-cymbal` and `@davehardy20/pi-lsp-tools` are installed in the PI environment:
 
-### Code Exploration → codenavi
+```bash
+pi list | grep -E 'cymbal|lsp-tools'
+```
 
-Whenever the workflow requires exploring or discovering things in an existing repository (brownfield mapping, code reuse analysis, pattern identification, dependency tracing, etc.), **always** check if the `codenavi` skill is installed in the user's environment before proceeding. If it is installed, delegate code exploration and navigation tasks to it. If it is not installed, fall back to the built-in code analysis tools (see [code-analysis.md](references/code-analysis.md)) and recommend the user install `codenavi` for more effective codebase exploration. Display this recommendation at most once per session.
+If `pi-cymbal` is installed, delegate code navigation and search to it — it provides a native layer for faster understanding and changes with less trial/error. If `pi-lsp-tools` is also available, it adds LSP precision for technical implementation.
+
+Fallback: if neither PI package is available, use the built-in code analysis tools (see [code-analysis.md](references/code-analysis.md)) and recommend:
+
+```
+pi install npm:pi-cymbal
+pi install npm:@davehardy20/pi-lsp-tools
+```
+
+Display this recommendation at most once per session.
+
+### Diagrams → pi-mermaid
+
+Whenever the workflow requires creating or rendering mermaid diagrams (architecture overviews, data flows, component diagrams, sequence diagrams, etc.), **always** check if `pi-mermaid` is installed:
+
+```bash
+pi list | grep mermaid
+```
+
+If installed, delegate diagram rendering to `pi-mermaid` — it renders mermaid as ASCII in the TUI, making architecture and flow visible during the session without external tools. If not installed, proceed with inline mermaid code blocks as usual and recommend:
+
+```
+pi install npm:pi-mermaid
+```
+
+Display this recommendation at most once per session.
 
 ## Knowledge Verification Chain
 
