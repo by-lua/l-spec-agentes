@@ -2,6 +2,24 @@
 # L-Spec — Instalador para Claude Code e OpenCode
 set -uo pipefail
 
+# ── Corrigir HOME se estiver no Hermes (aponta pra .hermes/profiles/<perfil>/home) ──
+_real_home() {
+  local h="$HOME"
+  # Se HOME contém .hermes/profiles, provavelmente é o Hermes
+  if [[ "$h" == *".hermes/profiles"* ]]; then
+    # Tenta /root se existir e se não for o próprio home de usuário real
+    if [ -d "/root" ] && [ "/root" != "$h" ]; then
+      echo "/root"
+      return
+    fi
+  fi
+  echo "$h"
+}
+
+HOME_ORIG="$HOME"
+HOME="$( _real_home )"
+export HOME
+
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
@@ -138,6 +156,9 @@ JSON
     fi
   fi
 
+  # Criar dirs de commands
+  mkdir -p "$commands_dir"
+
   # Copiar skills
   local count=0
   for skill in $(list_skills); do
@@ -146,23 +167,18 @@ JSON
     ((count++))
   done
 
-  # Copiar slash commands (cada skill com command.md → .md)
+  # Copiar slash commands: cada skill com command.md → .md
   local cmd_count=0
   for skill in $(list_skills); do
     if [ -f "$SKILLS_SOURCE/$skill/SKILL.md" ]; then
-      # Gerar command a partir do nome da skill
-      local cmd_name="lspec-$(echo "$skill" | sed 's/lspec-//')"
-      cat > "$commands_dir/${cmd_name}.md" <<CMD
-# $skill
-
-Carrega a skill L-Spec: $skill
-
-\`\`\`markdown
+      # Nome do comando: lspec-<skill> (exceto lspec → só lspec)
+      local raw="$(echo "$skill" | sed 's/^lspec-//')"
+      local cmd_name="lspec${raw:+-$raw}"
+      cat > "$commands_dir/${cmd_name}.md" <<'CMD'
 ---
-command: $cmd_name
+command: L-Spec
+description: Spec-Driven Development — discovery adaptativo, execução orientada a tarefas
 ---
-\`\`\`
-
 CMD
       echo -e "  ${GREEN}✓${NC} $cmd_name (slash command)"
       ((cmd_count++))
