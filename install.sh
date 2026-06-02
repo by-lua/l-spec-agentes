@@ -112,5 +112,5 @@ fi
 
 echo ""
 echo -e "${GREEN}✓ L-Spec instalado!${NC}"
-echo "Use: /l spec | /l discover | /l specify | /l design | /l tasks | /l execute"
+echo "Use: /lspec spec | /lspec discover | /lspec specify | /lspec design | /lspec tasks | /lspec execute"
 echo ""

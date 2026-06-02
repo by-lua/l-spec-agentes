@@ -65,15 +65,15 @@ Para mais opções: `bash install.sh --help`
 | Comando | Descrição |
 |---------|-----------|
 | `/l` | Fluxo principal |
-| `/l discover` | Discovery de projeto |
-| `/l specify` | Definir feature |
-| `/l design` | Design técnico |
-| `/l tasks` | Decompor em tarefas |
-| `/l execute` | Executar tarefas |
-| `/l ask` | Perguntar durante processo |
-| `/l pause` | Pausar sessão |
-| `/l resume` | Resumir sessão |
-| `/l help` | Ajuda |
+| `/lspec discover` | Discovery de projeto |
+| `/lspec specify` | Definir feature |
+| `/lspec design` | Design técnico |
+| `/lspec tasks` | Decompor em tarefas |
+| `/lspec execute` | Executar tarefas |
+| `/lspec ask` | Perguntar durante processo |
+| `/lspec pause` | Pausar sessão |
+| `/lspec resume` | Resumir sessão |
+| `/lspec help` | Ajuda |
 
 ## Estrutura de arquivos
 
