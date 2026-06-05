@@ -105,6 +105,54 @@ Regras:
 
 ## Workflow
 
+**⚠️ REGRAS CRÍTICAS — OBRIGATÓRIO SEGUIR:**
+
+### COMPLIANCE GATE — ANTES DE QUALQUER EDIT
+
+**Este gate é BLOQUEANTE.** Roda antes de cada edit no código.
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  GATE: COMPLIANCE CHECK — antes de cada edit                   ║
+╠══════════════════════════════════════════════════════════════════╣
+║  □  .specs/features/<feature>/spec.md existe                   ║
+║  □  spec.md foi lida e compreendida                            ║
+║  □  Arquivos a editar estão listados na spec ou tasks          ║
+║  □  Mudança NÃO foge do escopo da spec                         ║
+║  □  STATE.md foi atualizado na última fase                     ║
+╠══════════════════════════════════════════════════════════════════╣
+║ ⚠️  Se ANY □ = false → BLOQUEIA. Não edita. Pergunta.        ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+### GATE: Estado Salvo Entre Fases
+
+**Antes de iniciar qualquer fase nova:**
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  GATE: STATE SAVED — antes de iniciar nova fase                 ║
+╠══════════════════════════════════════════════════════════════════╣
+║  □  .specs/features/<feature>/STATE.md existe                  ║
+║  □  Última fase registrada                                      ║
+║  □  Pendências atualizadas                                      ║
+║  □  Commits feitos (se aplicável)                               ║
+╠══════════════════════════════════════════════════════════════════╣
+║ ⚠️  Se ANY □ = false → SALVA ANTES de iniciar nova fase.      ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+### Proibidos
+
+- ❌ **quick mode** — sempre implementar completo, sem atalhos
+- ❌ **auto-sizing** — não redimensionar automaticamente sem aprovação
+- ❌ **pular fases** — Discovery → Specify → Tasks → Execute (todas obrigatórias)
+- ❌ **features em fixes/** — toda estrutura vai em `features/`
+- ❌ **editar sem Compliance Gate** — verificar checklist antes de cada edit
+- ❌ **não salvar STATE.md** — autosave é obrigatório, não opcional
+
+---
+
 **New project:**
 
 1. Initialize project → PROJECT.md + ROADMAP.md
