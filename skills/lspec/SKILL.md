@@ -1,6 +1,6 @@
 ---
 name: lspec
-description: Spec-Driven Development para Claude Code e OpenCode. Fluxo Discovery→Specify→Tasks→Execute obrigatório. Clarify e Design são opcionais. Baseado no TLC Spec-Driven v2.
+description: Spec-Driven Development para Claude Code e OpenCode. Fluxo Discovery→Research→Specify→Tasks→Execute obrigatório. Research obrigatório. Clarify e Design são opcionais. Baseado no TLC Spec-Driven v2.
 license: CC-BY-4.0
 metadata:
   author: Felipe Rodrigues - github.com/felipfr
@@ -11,7 +11,7 @@ metadata:
 
 **REGRRA ABSOLUTA:** Enquanto esta skill estiver carregada, QUALQUER menção do usuário a uma das situações abaixo DEVE disparar automaticamente o fluxo de Discovery (`lspec discovery`). NÃO espere o usuário digitar `/lspec discovery` manualmente.
 
-**Como funciona:** detecte a categoria pelo contexto, pergunte o MÍNIMO necessário e avance para Specify → Tasks → Execute seguindo o fluxo obrigatório.
+**Como funciona:** detecte a categoria pelo contexto, pergunte o MÍNIMO necessário e avance para Research → Specify → Tasks → Execute seguindo o fluxo obrigatório.
 
 > ⚠️ **PROIBIDO delegar subagente (Explorer/Fixer/Coder/etc) diretamente sem antes passar pelo Discovery**
 
@@ -65,7 +65,7 @@ Plan and implement projects with precision. Granular tasks. Clear dependencies. 
 
 ## Fluxo Base do L-Spec PI
 
-Fluxo fixo: todo trabalho passa por `Discovery → Specify → Tasks → Execute`.
+Fluxo fixo: todo trabalho passa por `Discovery → Research → Specify → Tasks → Execute`.
 
 Regras:
 - Discovery: obrigatório (sempre inicia aqui)
@@ -146,7 +146,7 @@ Regras:
 
 - ❌ **quick mode** — sempre implementar completo, sem atalhos
 - ❌ **auto-sizing** — não redimensionar automaticamente sem aprovação
-- ❌ **pular fases** — Discovery → Specify → Tasks → Execute (todas obrigatórias)
+- ❌ **pular fases** — Discovery → Research → Specify → Tasks → Execute (todas obrigatórias)
 - ❌ **features em fixes/** — toda estrutura vai em `features/`
 - ❌ **editar sem Compliance Gate** — verificar checklist antes de cada edit
 - ❌ **não salvar STATE.md** — autosave é obrigatório, não opcional
@@ -166,7 +166,8 @@ Cada fase **PRODUZ um artifact** que a próxima **PRECISA**. Sem artifact, não 
 ║                                                                      ║
 ║  Pipeline → Produz → Feeds → Próxima                               ║
 ║                                                                      ║
-║  Discovery  → .specs/project/STATE.md  → Specify                     ║
+║  Discovery  → .specs/project/STATE.md  → Research                   ║
+║  Research   → features/[name]/research.md → Specify                  ║
 ║  Specify    → features/[name]/spec.md  → Tasks                       ║
 ║  Tasks      → features/[name]/tasks.md → Execute                     ║
 ║  Execute    → working-tree changes     → Validate                   ║
@@ -209,13 +210,13 @@ Execute /lspec specify primeiro para criar o artifact."
 **New project:**
 
 1. Initialize project → PROJECT.md + ROADMAP.md
-2. For each feature → Discovery → Specify → (Clarify) → (Design) → Tasks → Execute
+2. For each feature → Discovery → Research → Specify → (Clarify) → (Design) → Tasks → Execute
 
 **Existing codebase:**
 
 1. Map codebase → 7 brownfield docs
 2. Initialize project → PROJECT.md + ROADMAP.md
-3. For each feature → mesmo fluxo fixo (Discovery → Specify → (Clarify) → (Design) → Tasks → Execute)
+3. For each feature → mesmo fluxo fixo (Discovery → Research → Specify → (Clarify) → (Design) → Tasks → Execute)
 
 **Bug/fix:**
 
