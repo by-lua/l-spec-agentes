@@ -1,8 +1,10 @@
-# L-Spec Agents
+# L-Spec
 
-SDD (Spec-Driven Development) para Claude Code e OpenCode, mantendo o fluxo completo de especificação antes da execução.
+SDD (Spec-Driven Development) para Claude Code e OpenCode — **projetos novos E existentes**.
 
-> Adaptado do [L-Spec PI](https://github.com/by-lua/lspec-pi) — versão para PI.dev. Funcionalidades idênticas; ferramentas e instalador específicos para Claude Code e OpenCode.
+Não sabe por onde começar? O L-Spec mapeia o código existente, constrói a documentação e só então implementa. Tudo começa com spec, nunca com código.
+
+> Este projeto foi **adaptado do [L-Spec PI](https://github.com/by-lua/lspec-pi)** — a versão original para PI.dev. As funcionalidades são idênticas; as ferramentas de suporte e o instalador são específicos para Claude Code e OpenCode.
 
 ## O que é SDD?
 
