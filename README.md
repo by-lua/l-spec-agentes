@@ -457,20 +457,6 @@ Ou simplesmente re-executar o install: `bash install.sh` — sobrescreve skills 
 curl -fsSL https://raw.githubusercontent.com/by-lua/l-spec-agentes/main/uninstall.sh | bash
 ```
 
----
-
-## Recomendado: L-Spec Subagents (by-lua)
-
-Extensão para delegação por especialidade:
-
-- Opus como orquestrador
-- Gemini como designer
-- GPT como executor
-
-Repo: https://github.com/by-lua/lspec-subagents
-
----
-
 ## Referências internas
 
 - `skills/lspec/README.md`
